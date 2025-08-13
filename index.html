@@ -5,14 +5,63 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<style>
+		  @font-face {
+		    font-family: 'MyFont';
+		    src: url('SmileySans-Oblique.woff2') format('woff2');
+		  }
+		  body {
+		    min-height: 100vh;
+		    font-family: 'MyFont';
+		    background: linear-gradient(to bottom, #3498db, white);
+		  } div:not([class="search"]),input[type="submit"] {
+		    background-color: white;
+		  }
 			.bluewater-title {
-			border: 2px solid #3498db;
-			border-radius: 20px;
+			  padding: 2px 5px;
+			  border-radius: 20px;
+			  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 			}
 			.bluewater-title h1 {
-					color: blue;
-					font-size: 18px;
-					text-align: center;
+		    font-family: default;
+				color: #92d1fc;
+			  font-size: 18px;
+				text-align: center;
+			}
+			.sign {
+			  margin-top: 10px;
+			  border: 2px solid #3498db;
+			  border-radius: 20px;
+			}
+			.sign p {
+			  text-align: center;
+			}
+			.lls {
+			  margin-top: 10px;
+			  border: 2px solid red;
+			  border-radius: 20px;
+			}
+			.lls p {
+			  text-align: center;;
+			}
+      .search {
+        margin-top: 50px;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			}
+			.search input {
+			  border: 2px solid #3498db;
+			}
+			.search input[type="text"] {
+			  border-radius: 20px;
+			  text-align: center;
+			  padding: 12px 50px;
+			}
+			.search input[type="submit"] {
+			  text-align: center;
+			  display: block;
+			  border-radius: 20px;
+			  padding: 12px 30px;
 			}
 		</style>
 	</head>
@@ -21,5 +70,24 @@
 		<div class="bluewater-title">
 			<h1>bluewater的个人主页</h1>
 		</div>
+		<div class="sign">
+		  <p>我的bilibili账号：<a href="https://space.bilibili.com/1065414443">绿蓝红金official</a></p>
+		  <p>我的github账户：<a href="https://github.com/yzhsy114514/">yzhsy114514的主页</a></p>
+		</div>
+		<div class="lls">
+		  <p>没错，我又鸽了一个月 XD</p>
+		  <p>对于up主当了好不好...我的理解是：tm的我当年就不应该入驻b站吃着这个石一样的推流早知道就在抖音扎根一辈子不和这个傻逼b站推流做斗争了！.好累啊</p>
+		</div>
+		<div class="search">
+		  <input type="text" id="myin">
+		  <input type="submit" value="搜索">
+		</div>
+		<script>
+		  document.querySeletor('from').addEventListener('submit', function(e) {
+		      e.preventDefault();
+		      var a = "https://cn.bing.com/search?q=";
+		      window.open(a + document.getElementById("myin").value);
+		    });
+		</script>
 	</body>
 </html>
